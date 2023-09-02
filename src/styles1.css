@@ -1,0 +1,39 @@
+.sponsor .style {
+    height: 20%;
+    width: 20%;
+    display: inline-block;
+    padding: 2%;
+}
+
+.sponsor .h2 {
+    font-weight: strong;
+    text-decoration: underline;
+    margin-bottom: 20%;
+}
+
+@media (max-width:1024px) {
+    .sponsor .style {
+        height: 26%;
+        width: 26%;
+        display: inline-block;
+        padding: 2%;
+    }
+}
+
+@media (max-width:767px) {
+    .sponsor .style {
+        height: 30%;
+        width: 30%;
+        display: inline-block;
+        padding: 2%;
+    }
+}
+
+@media (max-width:480px) {
+    .sponsor .style {
+        height: 50%;
+        width: 50%;
+        display: inline-block;
+        padding: 2%;
+    }
+}

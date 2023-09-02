@@ -1,0 +1,14 @@
+#targetSection {
+    background: linear-gradient(to bottom, #0a0e2a, #081324, #0d0a16, #060512, #000000);
+    animation: cosmicOdysseyAnimation 10s linear infinite; /* Adjust animation duration and timing function */
+  }
+  
+  @keyframes cosmicOdysseyAnimation {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+  
