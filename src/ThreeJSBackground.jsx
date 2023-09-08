@@ -23,7 +23,7 @@ const ThreeJSBackground = () => {
 
     // Generate random star positions that fill the screen vertically
     const starsVertices = [];
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 2000; i++) {
       const x = (Math.random() - 0.5) * 5;
       const y = (Math.random() - 0.5) * 5;
       const z = (Math.random() - 0.5) * 5;
@@ -95,9 +95,9 @@ const ThreeJSBackground = () => {
           left: '50%',
           transform: 'translate(-50%, -50%)',
           zIndex: 1,
-          backgroundColor: 'rgba(0, 0, 0, 0.5)', // Add a semi-transparent background
+          // backgroundColor: 'rgba(0, 0, 0, 0.5)', // Add a semi-transparent background
           color: 'white', // Set text color to white,
-          width: '100%'
+          width: '100%',
         }}
       >
         <Headline />
