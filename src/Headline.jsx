@@ -10,8 +10,8 @@ const style = {
 }
 
 const image_style = {
-    height: "20%",
-    width: "30%"
+    height: "28%",
+    width: "28%"
 }
 
 function Headline() {
