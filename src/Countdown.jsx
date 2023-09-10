@@ -16,7 +16,7 @@ function Count() {
         if (completed) {
           return <></>;
         } else {
-          return <h4 style={{"fontFamily": "'Goldman', cursive", "margin": "1% 0", "color":"lightGreen"}}>{days} DAYS : {hours} HOURS : {minutes} MINUTES : {seconds} SECONDS REMAINING</h4>;
+          return <h4 style={{"fontFamily": "'Goldman', cursive", "margin": "1% 0", "color":"lightGreen"}}>{days} : {hours} : {minutes} : {seconds} TO GO</h4>;
         }
     };
 

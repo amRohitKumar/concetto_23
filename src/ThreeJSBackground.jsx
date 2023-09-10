@@ -1,109 +1,67 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
+import { Canvas, useFrame } from 'react-three-fiber';
 import * as THREE from 'three';
 import Headline from './Headline';
 
-const ThreeJSBackground = () => {
-  const containerRef = useRef(null);
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer();
-  const stars = [];
+import './StarryBackground.css';
 
-  useEffect(() => {
-    // Set up the scene, camera, and renderer
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    containerRef.current.appendChild(renderer.domElement);
+const Stars = () => {
+  const starsRef = useRef();
 
-    // Create a star geometry and material
-    const starGeometry = new THREE.BufferGeometry();
-    const starMaterial = new THREE.PointsMaterial({
-      color: 0xFFFFFF,
-      size: 0.004,
-    });
+  const generateStars = () => {
+    const stars = new THREE.Group();
 
-    // Generate random star positions that fill the screen vertically
-    const starsVertices = [];
-    for (let i = 0; i < 2000; i++) {
-      const x = (Math.random() - 0.5) * 5;
-      const y = (Math.random() - 0.5) * 5;
-      const z = (Math.random() - 0.5) * 5;
-      starsVertices.push(x, y, z);
+    const starGeometry = new THREE.SphereGeometry(0.1, 10, 10);
+    const starMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+
+    for (let i = 0; i < 5000; i++) {
+      const starMesh = new THREE.Mesh(starGeometry, starMaterial);
+      starMesh.position.set(
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100,
+        (Math.random() - 0.5) * 100
+      );
+      starMesh.scale.set(Math.random(), Math.random(), Math.random());
+      stars.add(starMesh);
     }
 
-    starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
+    return stars;
+  };
 
-    // Create a star field
-    const starField = new THREE.Points(starGeometry, starMaterial);
-    scene.add(starField);
+  const stars = generateStars();
 
-    // Set initial camera position
-    camera.position.z = 4;
+  useFrame(({ clock }) => {
+    const elapsedTime = clock.getElapsedTime();
 
-    // Create an animation loop
-    const animate = () => {
-      requestAnimationFrame(animate);
+    stars.rotation.x = elapsedTime * 0.1;
+    stars.rotation.y = elapsedTime * 0.1;
+  });
 
-      // Move stars from top to bottom by decrementing their z-coordinates
-      starField.geometry.attributes.position.array.forEach((position, index) => {
-        if (index % 3 === 2) {
-          position -= 0.01;
-          if (position < 0) {
-            position = 5;
-          }
-        }
-        starField.geometry.attributes.position.array[index] = position;
-      });
+  return <primitive ref={starsRef} object={stars} />;
+};
 
-      starField.geometry.attributes.position.needsUpdate = true;
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    // Handle window resize
-    const handleResize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+const ContentOverflow = () => {
   return (
-    <div
-      ref={containerRef}
-      style={{
-        position: 'relative',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          zIndex: 1,
-          // backgroundColor: 'rgba(0, 0, 0, 0.5)', // Add a semi-transparent background
-          color: 'white', // Set text color to white,
-          width: '100%',
-        }}
-      >
-        <Headline />
+    <Headline/>
+  )
+}
+
+const StarryBackground = () => {
+  return (
+    <div className="app-container">
+      <div className="background-container">
+        <Canvas style={{ width: '100vw', height: '100vh' }} camera={{ position: [0, 0, 10] }}>
+          <ambientLight intensity={1} />
+          <pointLight position={[0, 0, 0]} />
+          <Stars />
+          <group rotation={[0, 0, 0]}>{/* Add your scene content here */}</group>
+        </Canvas>
+        <div className="content-overlay">
+          <ContentOverflow/>
+        </div>
       </div>
     </div>
   );
 };
 
-export default ThreeJSBackground;
+export default StarryBackground;

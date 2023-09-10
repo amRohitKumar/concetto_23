@@ -2,7 +2,6 @@ import Registration from './Registration';
 import './App.css';
 import ThreeJSBackground from './ThreeJSBackground';
 import ContentBelow from './ContentBelow';
-import styles from './styles.css';
 
 function App() {
   return (

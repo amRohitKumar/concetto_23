@@ -1,0 +1,21 @@
+/* Styling for the entire page */
+body {
+    width: 100%;
+}
+
+.app-container {
+    background-image: url("https://user-images.githubusercontent.com/26748614/96337246-f14d4580-1085-11eb-8793-a86d929e034d.jpg"); 
+    height: 100vh;
+    overflow: hidden;
+}
+  
+  .content-overlay {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Ensure the overlay is above the background */
+  }
+  
