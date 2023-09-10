@@ -6,7 +6,7 @@ import Count from "./Countdown";
 const style = {
     fontFamily:"'Bungee Inline', cursive",
     fontSize: "280%",
-    margin: "5%",
+    margin: "2%",
     color: "white"
 }
 
