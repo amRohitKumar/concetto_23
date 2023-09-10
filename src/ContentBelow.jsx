@@ -31,66 +31,69 @@ let BuildABitSponsors = [];
 
 SponsorsList.forEach(sponsor=>{
     if(sponsor.is_title) {
-        TitleSponsor.push(<a href={sponsor.link}><img src={sponsor.img} style={{"width":"30%", "padding":"2%"}}></img></a>)
+        TitleSponsor.push(<span>
+        <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
+        </span>
+        )
     }
     else if(sponsor.cat=="Major Sponsors") {
         MajorSponsors.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="General Sponsors") {
         GeneralSponsors.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Event Sponsors") {
         EventSponsors.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Travel Partner") {
         TravelPartner.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Education Partner") {
         EducationPartner.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Airlines Partner") {
         AirlinesPartner.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img}  className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img}  style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Media Partner") {
         MediaPartner.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Beverage Partner") {
         BeveragePartner.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Food Partner") {
         FoodPartner.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Entertainment Partner") {
         EntertainmentPartner.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Coupon Partner") {
         CouponPartner.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
     else if(sponsor.cat=="Build-a-bit Sponsors") {
         BuildABitSponsors.push(<span>
-            <a href={sponsor.link}><img src={sponsor.img} className="style"></img></a>
+            <a href={sponsor.link}><img src={sponsor.img} style={{ width: "15%", padding: "2%" , height:"200px"}} className="style"></img></a>
         </span>)
     }
 })
