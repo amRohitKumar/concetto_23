@@ -1,0 +1,136 @@
+body {
+    overflow-x: hidden !important;
+}
+
+#canvas_container {
+    overflow-x: hidden;
+    width: 100vw !important;
+    height: 100vh !important;
+    /* z-index: -1 !important; */
+    /* position: relative; */
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+#canvas_box {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#canvas_content {
+    /* display: block; */
+    /* pointer-events: none; */
+    font-size: 24px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas_img {
+    width: 50%;
+    pointer-events: none;
+}
+
+.canvas_title {
+    margin-top: 2em;
+    pointer-events: none;
+    font-family: Goldman, cursive;
+    color: white
+}
+
+.canvas_btn {
+    /* z-index: inherit; */
+    background-color: transparent;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    margin-top: 1em;
+    width: 50px;
+}
+
+/* TIMER STYLING */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* general styling */
+:root {
+    --smaller: .75;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.timer_container {
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-weight: normal;
+    /* letter-spacing: .125rem; */
+    text-transform: uppercase;
+}
+
+li {
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+li span {
+    display: block;
+    font-size: 2rem;
+}
+
+.timer_emoji {
+    display: none;
+    padding: 1rem;
+}
+
+.timer_emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+}
+
+@media all and (max-width: 768px) {
+    h1 {
+        font-size: calc(1.5rem * var(--smaller));
+    }
+
+    li {
+        font-size: calc(1.125rem * var(--smaller));
+    }
+
+    li span {
+        font-size: calc(3.375rem * var(--smaller));
+    }
+}

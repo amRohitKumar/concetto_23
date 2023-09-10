@@ -20,19 +20,19 @@ function Count() {
           <div class="time-content">
          <div class="time days">
              <span class="number">{days}</span>
-             <span class="text">days</span>
+             {/* <span class="text">days</span> */}
          </div>
          <div class="time hours">
              <span class="number">{hours}</span>
-             <span class="text">hours</span>
+             {/* <span class="text">hours</span> */}
          </div>
          <div class="time minutes">
              <span class="number">{minutes}</span>
-             <span class="text">minutes</span>
+             {/* <span class="text">minutes</span> */}
          </div>
          <div class="time seconds">
              <span class="number">{seconds}</span>
-             <span class="text">seconds</span>
+             {/* <span class="text">seconds</span> */}
          </div>
      </div>
      </div>
