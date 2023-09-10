@@ -135,6 +135,31 @@
 
   
 
-  
+  @media (max-width:520px) {
+
+    .time-content {
+        display: flex;
+        width: auto;
+        column-gap: 15px;
+        align-items: center;
+        margin: 2rem;
+        border: 1px solid white;
+        padding: 2rem 2.5rem;
+        border-radius: 0.5rem;
+        background: rgba(250, 250, 250, 0.2);
+    }
+    .number {
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 1;
+        color: #eee;
+    }
+    .text {
+        text-transform: capitalize;
+        color: #fff;
+        font-weight: 600;
+        font-size: 7px;
+    }
+}
 
   
