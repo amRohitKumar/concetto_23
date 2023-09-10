@@ -1,6 +1,6 @@
 import React from "react";
 import Countdown from 'react-countdown';
-
+import './styles1.css';
 function Count() {
 
     const date1 = new Date()
@@ -16,7 +16,26 @@ function Count() {
         if (completed) {
           return <></>;
         } else {
-          return <h4 style={{"fontFamily": "'Goldman', cursive", "margin": "1% 0", "color":"lightGreen"}}>{days} DAYS : {hours} HOURS : {minutes} MINUTES : {seconds} SECONDS REMAINING</h4>;
+          return <div class="container">
+          <div class="time-content">
+         <div class="time days">
+             <span class="number">{days}</span>
+             <span class="text">days</span>
+         </div>
+         <div class="time hours">
+             <span class="number">{hours}</span>
+             <span class="text">hours</span>
+         </div>
+         <div class="time minutes">
+             <span class="number">{minutes}</span>
+             <span class="text">minutes</span>
+         </div>
+         <div class="time seconds">
+             <span class="number">{seconds}</span>
+             <span class="text">seconds</span>
+         </div>
+     </div>
+     </div>
         }
     };
 

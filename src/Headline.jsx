@@ -6,7 +6,7 @@ import Count from "./Countdown";
 const style = {
     fontFamily:"'Bungee Inline', cursive",
     fontSize: "280%",
-    margin: "5%"
+    margin: "2%"
 }
 
 const image_style = {
@@ -37,9 +37,9 @@ function Headline() {
                 delaySpeed={1000}
             />
             </h2></p>
-            <Count/>
+           
             <h3 style={{"fontFamily": "'Goldman', cursive"}}>THE ANNUAL TECHNO-MANAGEMENT FEST OF IIT (ISM) DHANBAD.</h3><br></br>
-            <h2 style={{"fontFamily": "'Goldman', cursive", "color": "red"}}>13 - 15 OCTOBER 2023</h2>
+            <Count/>
             <button onClick={scrollToSection} style={{"backgroundColor":"transparent", "color":"white", "border":"0", "cursor":"pointer"}}><KeyboardDoubleArrowDownIcon style={{"fontSize":"400%"}}/></button>
         </>
     )
