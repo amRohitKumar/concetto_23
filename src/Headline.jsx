@@ -6,7 +6,6 @@ import Count from "./Countdown";
 const style = {
     fontFamily:"'Bungee Inline', cursive",
     fontSize: "280%",
-    margin: "2%",
     color: "white"
 }
 
@@ -26,7 +25,7 @@ function Headline() {
 
     return (
         <>
-            <img src="Concetto Full Logo.png" style={image_style}></img><br></br>
+            <img src="Concetto Full Logo.png" style={image_style}></img><br></br><br></br>
             <p><h2 style={style}>C
             <Typewriter
                 words={["ONCETTO' 23. COMING SOON."]}

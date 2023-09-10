@@ -20,7 +20,7 @@
         box-shadow:  0 0 40px var(--button-color);
         transition-delay: 400ms;
     }
-    margin: 15px;
+    margin: 24px;
 }
 
 .sponsor .h2 {
@@ -60,7 +60,7 @@
     width: auto;
     column-gap: 30px;
     align-items: center;
-    margin: 2rem;
+    /* margin: 2rem; */
     border: 1px solid white;
     padding: 2rem 2.5rem;
     border-radius: 0.5rem;
@@ -90,3 +90,50 @@
     flex-direction: column;
     overflow: hidden;
 }
+
+/* Styling for the entire page */
+.sponsor {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sponsor {
+    width: 100%;
+    position: relative;
+  }
+  
+  /* Animated gradient background */
+  .sponsor {
+    position: absolute;
+    animation: changeGradient 20s linear infinite; /* Change every 20 seconds */
+    background: linear-gradient(45deg, #090d27, #0a0d21, #151625, #1c2130);
+    background-size: 400% 400%;
+  }
+  
+  @keyframes changeGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 0% 50%;
+    }
+    75% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+
+  
+
+  
+
+  
