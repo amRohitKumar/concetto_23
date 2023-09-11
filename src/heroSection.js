@@ -1,4 +1,3 @@
-import { OrbitControls } from "https://unpkg.com/three@0.112/examples/jsm/controls/OrbitControls.js";
 const THREE = window.THREE;
 const SimplexNoise = window.SimplexNoise;
 
@@ -46,7 +45,7 @@ function init() {
   container.appendChild(renderer.domElement);
 
   //OrbitControl
-  controls = new OrbitControls(camera, renderer.domElement);
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.autoRotate = true;
   controls.autoRotateSpeed = 4;
   controls.maxDistance = 150;
