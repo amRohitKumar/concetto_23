@@ -13,12 +13,10 @@ animate()
 function App() {
   return (
     <div className="App">
-      {/* <ThreeJSBackground/> */}
-      {/* <Headline /> */}
       <div id="targetSection">
-        <Background/>
+        <Background />
         <div className="parallax-content">
-          <ContentBelow/>
+          <ContentBelow />
         </div>
       </div>
 
