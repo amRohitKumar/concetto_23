@@ -1,6 +1,5 @@
-
 :root {
-    --button-color: #00fff6;
+    --button-color: #00617c;
     --second-color: #050f1a;
 }
 
@@ -15,13 +14,18 @@
     display: inline-block;
     padding: 2%;
     border: 2px solid var(--button-color);
-    border-radius: 15%;
+    border-radius: 15px;
+    box-shadow: 0 0 0.1rem var(--button-color), 0 0 0.1rem var(--button-color), 0 0 1rem #00617c, 0 0 0.4rem #00617c, 0 0 1.4rem #00617c, inset 0 0 0.7rem #00617c;
     &:hover {
-        box-shadow:  0 0 40px var(--button-color);
-        transition-delay: 400ms;
+        transform: scale(1.05);
     }
+    transition: transform linear 150ms;
+
     margin: 24px;
 }
+
+/* .style:hover {
+} */
 
 .sponsor .h2 {
     font-weight: strong;
@@ -67,23 +71,27 @@
     border-radius: 0.5rem;
     background: rgba(250, 250, 250, 0.2);
 }
+
 .time {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 .number {
     font-weight: 800;
     font-size: 80px;
     line-height: 1;
     color: #eee;
 }
+
 .text {
     text-transform: capitalize;
     color: #fff;
     font-weight: 600;
     font-size: 12px;
 }
+
 .container {
     display: flex;
     align-items: center;
@@ -95,7 +103,7 @@
 /* Styling for the entire page */
 .sponsor {
     background: transparent;
-    height: 100vh; 
+    height: 100vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -105,15 +113,16 @@
 }
 
 .sponsor::-webkit-scrollbar {
-    width: 0; /* Hide the scrollbar for WebKit-based browsers (Chrome, Safari, etc.) */
-  }
-  
-  .sponsor .style {
+    width: 0;
+    /* Hide the scrollbar for WebKit-based browsers (Chrome, Safari, etc.) */
+}
+
+.sponsor .style {
     height: 200px;
     /* Rest of your styles */
-  }
-    
-  @media (max-width:520px) {
+}
+
+@media (max-width:520px) {
 
     .time-content {
         display: flex;
@@ -126,12 +135,14 @@
         border-radius: 0.5rem;
         background: rgba(250, 250, 250, 0.2);
     }
+
     .number {
         font-weight: 600;
         font-size: 40px;
         line-height: 1;
         color: #eee;
     }
+
     .text {
         text-transform: capitalize;
         color: #fff;
@@ -139,5 +150,3 @@
         font-size: 7px;
     }
 }
-
-  
