@@ -94,47 +94,25 @@
 
 /* Styling for the entire page */
 .sponsor {
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
-  }
-  
-  .sponsor {
-    width: 100%;
-    position: relative;
-  }
-  
-  /* Animated gradient background */
-  .sponsor {
-    position: absolute;
-    animation: changeGradient 20s linear infinite; /* Change every 20 seconds */
-    background: linear-gradient(45deg, #090d27, #0a0d21, #151625, #1c2130);
-    background-size: 400% 400%;
-  }
-  
-  @keyframes changeGradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    25% {
-      background-position: 100% 50%;
-    }
-    50% {
-      background-position: 0% 50%;
-    }
-    75% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
+    background: transparent;
+    height: 100vh; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
 
-
+.sponsor::-webkit-scrollbar {
+    width: 0; /* Hide the scrollbar for WebKit-based browsers (Chrome, Safari, etc.) */
+  }
   
-
+  .sponsor .style {
+    height: 200px;
+    /* Rest of your styles */
+  }
+    
   @media (max-width:520px) {
 
     .time-content {

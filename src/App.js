@@ -3,6 +3,7 @@ import './App.css';
 import ThreeJSBackground from './ThreeJSBackground';
 import ContentBelow from './ContentBelow';
 import Headline from './Headline';
+import Background from "./Background";
 
 import { init, animate } from './heroSection';
 
@@ -15,8 +16,12 @@ function App() {
       {/* <ThreeJSBackground/> */}
       {/* <Headline /> */}
       <div id="targetSection">
-        <ContentBelow/>
+        <Background/>
+        <div className="parallax-content">
+          <ContentBelow/>
+        </div>
       </div>
+
     </div>
   );
 }

@@ -53,3 +53,33 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css */
+
+/* App.css */
+
+.background-container1 {
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* Set the height to 100vh to match the viewport height */
+}
+
+.parallax-content {
+  width: 100vw;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Ensure the parallax content is on top of the background */
+  text-align: center;
+  height: 100vh; /* Set the height greater than 100vh for the parallax effect */
+  overflow: hidden;
+}
+
+/* Parallax effect
+.parallax-content:hover {
+  transform: translateX(-50%) translateY(-20vh); /* Adjust translateY value for the parallax effect */
+
+
+
+
