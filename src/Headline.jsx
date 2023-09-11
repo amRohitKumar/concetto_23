@@ -16,17 +16,17 @@ const image_style = {
 
 function Headline() {
 
-    const scrollToSection = () => {
-        const targetSection = document.getElementById('targetSection');
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+    // const scrollToSection = () => {
+    //     const targetSection = document.getElementById('targetSection');
+    //     if (targetSection) {
+    //       targetSection.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    // };
 
     return (
-        <>
+        <div className="hero-content">
             <img src="Concetto Full Logo.png" style={image_style}></img><br></br><br></br>
-            <p><h2 style={style}>C
+            <div><h2 style={style}>C
             <Typewriter
                 words={["ONCETTO' 23. COMING SOON."]}
                 loop={5}
@@ -36,11 +36,11 @@ function Headline() {
                 deleteSpeed={50}
                 delaySpeed={1000}
             />
-            </h2></p>
+            </h2></div>
             <h3 style={{"fontFamily": "'Goldman', cursive", "color":"white"}}>THE ANNUAL TECHNO-MANAGEMENT FEST OF IIT (ISM) DHANBAD.</h3><br></br>
             <Count/>
-            <button onClick={scrollToSection} style={{"backgroundColor":"transparent", "color":"white", "border":"0", "cursor":"pointer"}}><KeyboardDoubleArrowDownIcon style={{"fontSize":"400%"}}/></button>
-        </>
+            {/* <button onClick={scrollToSection} style={{"backgroundColor":"transparent", "color":"white", "border":"0", "cursor":"pointer"}}><KeyboardDoubleArrowDownIcon style={{"fontSize":"400%"}}/></button> */}
+        </div>
     )
 }
 
