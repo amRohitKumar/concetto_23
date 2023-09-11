@@ -3,11 +3,21 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import Headline from "./Headline";
+import Count from "./Countdown";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <React.StrictMode>
     <App />
+  </React.StrictMode>
 );
+const root1 = ReactDOM.createRoot(document.getElementById("root1"));
+root1.render(
+  <React.StrictMode>
+    <Count />
+  </React.StrictMode>
+);
+
 
 // const root2 = ReactDOM.createRoot(document.getElementById("canvas_container"));
 

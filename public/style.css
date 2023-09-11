@@ -16,7 +16,7 @@ body {
 }
 
 #canvas_box {
-    width: 60%;
+    width: auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -136,3 +136,6 @@ li span {
         font-size: calc(3.375rem * var(--smaller));
     }
 }
+.flipdown.flipdown__theme-dark .rotor-group-heading:before {
+    color: white;
+ }
