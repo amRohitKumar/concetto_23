@@ -62,17 +62,22 @@
   position: relative;
   width: 100vw;
   height: 100vh; /* Set the height to 100vh to match the viewport height */
+
+}
+
+.background-container1 canvas:not(:first-child){
+  display: none !important;
 }
 
 .parallax-content {
   width: 100vw;
+  height: 100vh;
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1; /* Ensure the parallax content is on top of the background */
   text-align: center;
-  height: 100vh; /* Set the height greater than 100vh for the parallax effect */
   overflow: hidden;
 }
 

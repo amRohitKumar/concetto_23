@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import { useEffect } from "react";
 import * as THREE from "three";
 
-class MovingStarsBackground extends Component {
-  componentDidMount() {
-    // Set up the scene, camera, and renderer
+const MovingStarsBackground = () => {
+  useEffect(() => {
+    const container = document.querySelector(".background-container1");
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -12,11 +12,12 @@ class MovingStarsBackground extends Component {
       1000
     );
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    this.mount.appendChild(renderer.domElement);
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
     const stars = [];
 
-    function addSphere() {
+    function addSphere(stars, scene) {
       // The loop will move from z position of -1000 to z position 1000, adding a random particle at each position.
       for (var z = -1000; z < 1000; z += 20) {
         // Make a sphere (exactly the same as before).
@@ -37,7 +38,7 @@ class MovingStarsBackground extends Component {
 
         // scale it up a bit
         sphere.scale.x = sphere.scale.y = 2;
-        sphere2.scale.x = sphere2.scale.y = 2;
+        sphere2.scale.x = sphere.scale.y = 2;
 
         //add the sphere to the scene
         scene.add(sphere);
@@ -71,19 +72,11 @@ class MovingStarsBackground extends Component {
       animateStars();
     }
 
-    // init();
-    addSphere();
+    addSphere(stars, scene);
     render();
-  }
+  });
 
-  render() {
-    return (
-      <div
-        className="background-container1"
-        ref={(ref) => (this.mount = ref)}
-      ></div>
-    );
-  }
-}
+  return <div className="background-container1" />;
+};
 
 export default MovingStarsBackground;
