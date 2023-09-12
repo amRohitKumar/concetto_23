@@ -3,138 +3,16 @@ import { SponsorsList } from "./SponsorList";
 import { Build, Title } from "@mui/icons-material";
 import "./styles1.css";
 
-let TitleSponsor = [];
+const allSponsors = [];
 
-let MajorSponsors = [];
-
-let GeneralSponsors = [];
-
-let EventSponsors = [];
-
-let TravelPartner = [];
-
-let EducationPartner = [];
-
-let AirlinesPartner = [];
-
-let MediaPartner = [];
-
-let BeveragePartner = [];
-
-let FoodPartner = [];
-
-let EntertainmentPartner = [];
-
-let CouponPartner = [];
-
-let BuildABitSponsors = [];
-
-SponsorsList.forEach((sponsor) => {
-  if (sponsor.is_title) {
-    TitleSponsor.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Major Sponsors") {
-    MajorSponsors.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "General Sponsors") {
-    GeneralSponsors.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Event Sponsors") {
-    EventSponsors.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Travel Partner") {
-    TravelPartner.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Education Partner") {
-    EducationPartner.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Airlines Partner") {
-    AirlinesPartner.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Media Partner") {
-    MediaPartner.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Beverage Partner") {
-    BeveragePartner.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Food Partner") {
-    FoodPartner.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Entertainment Partner") {
-    EntertainmentPartner.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Coupon Partner") {
-    CouponPartner.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  } else if (sponsor.cat == "Build-a-bit Sponsors") {
-    BuildABitSponsors.push(
-      <span>
-        <a href={sponsor.link}>
-          <img src={sponsor.img} className="style"></img>
-        </a>
-      </span>
-    );
-  }
+SponsorsList.forEach((sponsor, idx) => {
+  allSponsors.push(
+    <span key={idx}>
+      <a href={sponsor.link}>
+        <img src={sponsor.img} alt="sponsor poster" className="style"></img>
+      </a>
+    </span>
+  );
 });
 
 const ContentBelow = () => {
@@ -151,6 +29,11 @@ const ContentBelow = () => {
         PAST SPONSORS
       </h1>
       <center>
+        <div>
+          {allSponsors}
+        </div>
+      </center>
+      {/* <center>
         <h2
           style={{
             margin: "0",
@@ -294,7 +177,7 @@ const ContentBelow = () => {
           Build-a-bit Sponsors
         </h2>
         <div>{BuildABitSponsors}</div>
-      </center>
+      </center> */}
     </div>
   );
 };
