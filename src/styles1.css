@@ -8,8 +8,16 @@
     background-color: black;
 }
 
+center h2{
+    margin-bottom: 1em !important;
+}
+center div{
+    /* border: 1px solid white; */
+    margin-bottom: 2em !important;
+}
+
 .sponsor .style {
-    height: 200px;
+    height: 150px;
     width: 25%;
     display: inline-block;
     padding: 2%;
@@ -24,8 +32,9 @@
     margin: 24px;
 }
 
-/* .style:hover {
-} */
+#targetSection > div.parallax-content > div > center > div > span:nth-child(2) > a > img{
+    background-color: rgb(237, 237, 237);
+}
 
 .sponsor .h2 {
     font-weight: strong;
@@ -54,7 +63,7 @@
 @media (max-width:480px) {
     .sponsor .style {
         height: 80px;
-        width: 50%;
+        width: 75%;
         display: inline-block;
         padding: 2%;
     }

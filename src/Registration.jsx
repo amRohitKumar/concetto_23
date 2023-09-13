@@ -14,7 +14,7 @@ const Registration = () => {
         initialValues: initialValues,
         validationSchema: signUpSchema,
         onSubmit : (values, action) => {
-            console.log(values);
+            // console.log(values);
             action.resetForm();
         }
     })
