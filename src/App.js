@@ -5,6 +5,7 @@ import ThreeJSBackground from "./ThreeJSBackground";
 import ContentBelow from "./ContentBelow";
 import Headline from "./Headline";
 import Background from "./Background";
+import Footer from "./footer/Footer"; 
 
 import { init, animate } from "./heroSection";
 
@@ -38,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+      <Footer/>
       <div id="targetSection">
         <Background />
         <div className="parallax-content">
