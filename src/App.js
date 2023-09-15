@@ -3,15 +3,7 @@ import Registration from "./Registration";
 import "./App.css";
 import ThreeJSBackground from "./ThreeJSBackground";
 import ContentBelow from "./ContentBelow";
-import Headline from "./Headline";
 import Background from "./Background";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation
-} from "react-router-dom"
-// import { createBrowserHistory } from 'history';import Footer from "./footer/Footer"; 
 import {
   BrowserRouter as Router,
   Routes,
