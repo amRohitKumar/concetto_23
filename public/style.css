@@ -22,6 +22,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #canvas_content {
@@ -166,4 +170,27 @@ li span {
 
 .flipdown.flipdown__theme-dark .rotor-group-heading:before {
     color: white;
+}
+
+@media screen and (max-width: 400px){
+    /* NO ROTATION ON MOBILE DEVICE */
+    .canvas_btn1{
+        display: block;
+    }
+    .canvas_btn2{
+        display: none;
+    }
+    #canvas_content{
+        width: 100vw;
+        height: 100vh;
+        pointer-events: auto !important;
+    }
+}
+@media screen and (min-width: 500px) {
+    .canvas_btn1{
+        display: none;
+    }
+    .canvas_btn2{
+        display: block;
+    }
 }
