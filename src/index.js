@@ -5,6 +5,7 @@ import App from "./App";
 import Headline from "./Headline";
 import Count from "./Countdown";
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
