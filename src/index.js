@@ -14,7 +14,7 @@ root.render(
 const root1 = ReactDOM.createRoot(document.getElementById("root1"));
 root1.render(
   <React.StrictMode>
-    <Count />
+    <App />
   </React.StrictMode>
 );
 
