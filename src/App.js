@@ -43,7 +43,6 @@ function App() {
         <Background />
         <div className="parallax-content">
           <ContentBelow />
-          
         </div>
       </div>
     </div>

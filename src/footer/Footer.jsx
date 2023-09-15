@@ -17,31 +17,31 @@ const socialNetworks = [
   {
     socialHandle: "facebook",
     link: "https://www.facebook.com/nvcti/",
-    icon: <FacebookIcon sx={{fontSize: '2em'}} />,
+    icon: <FacebookIcon sx={{ fontSize: "2em" }} />,
     iconColor: "#3b5998",
   },
   {
     socialHandle: "linkeldn",
     link: "https://www.linkedin.com/company/nvcti-iitism/",
-    icon: <LinkedInIcon sx={{fontSize: '2em'}} />,
+    icon: <LinkedInIcon sx={{ fontSize: "2em" }} />,
     iconColor: "#0e76a8",
   },
   {
     socialHandle: "instagram",
     link: "https://www.instagram.com/nvcti.iitism/",
-    icon: <InstagramIcon sx={{fontSize: '2em'}} />,
+    icon: <InstagramIcon sx={{ fontSize: "2em" }} />,
     iconColor: "#cc2467",
   },
   {
     socialHandle: "twitter",
     link: "https://twitter.com/nvcti1",
-    icon: <TwitterIcon sx={{fontSize: '2em'}} />,
+    icon: <TwitterIcon sx={{ fontSize: "2em" }} />,
     iconColor: "#1da1f2",
   },
   {
     socialHandle: "youtube",
     link: "https://www.youtube.com/channel/UC4Uw9mJgYrssRq6vC7fO3fA",
-    icon: <YouTubeIcon sx={{fontSize: '2em'}} />,
+    icon: <YouTubeIcon sx={{ fontSize: "2em" }} />,
     iconColor: "#ff0000",
   },
 ];
@@ -58,11 +58,26 @@ export default function Footer() {
             If you have any questions or need help, feel free to contact with
             our team.
           </Typography>
-          <Box sx={{ fontSize: "1.25em", color: "#fa9119", mb: 2 }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+          <Box sx={{ fontSize: "1.25em", color: "#fa9119", mb: 2, mx: "auto" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "1rem",
+              }}
+            >
               <Email sx={{ fontSize: "1.25em" }} /> example@gmail.com
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "1rem",
+                // mx: "auto"
+              }}
+            >
               <Phone sx={{ fontSize: "1.25em" }} /> 1234567890
             </Box>
           </Box>
@@ -70,7 +85,7 @@ export default function Footer() {
             2307 Beverley Rd Brooklyn, New York 11226 United States.
           </Typography>
         </Container>
-        <Container>
+        <Container sx={{ mx: 0 }}>
           <Typography variant="h6" className="row-title">
             About Us
           </Typography>
