@@ -172,6 +172,13 @@ li span {
     color: white;
 }
 
+.rotor-group::before{
+    display: none;
+}
+.rotor-group::after{
+    display: none;
+=======
+
 @media screen and (max-width: 400px){
     /* NO ROTATION ON MOBILE DEVICE */
     .canvas_btn1{
