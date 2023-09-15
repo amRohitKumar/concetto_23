@@ -39,11 +39,11 @@ function App() {
 
   return (
     <div className="App">
-      <Footer/>
       <div id="targetSection">
         <Background />
         <div className="parallax-content">
           <ContentBelow />
+          
         </div>
       </div>
     </div>

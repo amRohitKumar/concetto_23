@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 import Box from "@mui/material/Box";
-// import BGImg from "../../assets/bg-footer.png";
+import BGImg from "../assets/bg-footer.png";
 
 export const Wrapper = styled(Box)({
   // border: "1px solid red",
   minHeight: "250px",
   width: "100%",
-  // backgroundImage: `url(${BGImg})`,
+  backgroundImage: `url(${BGImg})`,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "bottom",
   backgroundSize: "contain",
@@ -22,13 +22,13 @@ export const Wrapper = styled(Box)({
     justifyContent: "center",
 
     ".row-title": {
-      marginBottom: "1.5em",
+      marginBottom: "1em",
     },
 
     li: {
-      marginBottom: "1em",
+      marginBottom: "0.25em",
       cursor: "pointer",
-
+      display: 'block',
       "&:hover": {
         color: "#e87d01",
       },
