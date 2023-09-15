@@ -16,33 +16,21 @@ import { Email, Phone } from "@mui/icons-material";
 const socialNetworks = [
   {
     socialHandle: "facebook",
-    link: "https://www.facebook.com/nvcti/",
+    link: "https://www.facebook.com/Concettoiitdhanbad/",
     icon: <FacebookIcon sx={{ fontSize: "2em" }} />,
     iconColor: "#3b5998",
   },
   {
     socialHandle: "linkeldn",
-    link: "https://www.linkedin.com/company/nvcti-iitism/",
+    link: "https://www.linkedin.com/company/concetto-iitism-dhanbad/",
     icon: <LinkedInIcon sx={{ fontSize: "2em" }} />,
     iconColor: "#0e76a8",
   },
   {
     socialHandle: "instagram",
-    link: "https://www.instagram.com/nvcti.iitism/",
+    link: "https://www.instagram.com/concetto.iitism/?hl=en",
     icon: <InstagramIcon sx={{ fontSize: "2em" }} />,
     iconColor: "#cc2467",
-  },
-  {
-    socialHandle: "twitter",
-    link: "https://twitter.com/nvcti1",
-    icon: <TwitterIcon sx={{ fontSize: "2em" }} />,
-    iconColor: "#1da1f2",
-  },
-  {
-    socialHandle: "youtube",
-    link: "https://www.youtube.com/channel/UC4Uw9mJgYrssRq6vC7fO3fA",
-    icon: <YouTubeIcon sx={{ fontSize: "2em" }} />,
-    iconColor: "#ff0000",
   },
 ];
 
@@ -67,9 +55,9 @@ export default function Footer() {
                 gap: "1rem",
               }}
             >
-              <Email sx={{ fontSize: "1.25em" }} /> example@gmail.com
+              <Email sx={{ fontSize: "1.25em" }} /> concetto@iitism.ac.in
             </Box>
-            <Box
+            {/* <Box
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -79,10 +67,12 @@ export default function Footer() {
               }}
             >
               <Phone sx={{ fontSize: "1.25em" }} /> 1234567890
-            </Box>
+            </Box> */}
           </Box>
           <Typography variant="body2">
-            2307 Beverley Rd Brooklyn, New York 11226 United States.
+            Indian Institute of Technology (ISM) Dhanbad
+            <br />
+            Dhanbad - 826004, Jharkhand, India
           </Typography>
         </Container>
         <Container sx={{ mx: 0 }}>
@@ -91,92 +81,41 @@ export default function Footer() {
           </Typography>
           <ul>
             <li>
-              <Typography variant="body2" component={RRLink}>
-                Leadership Team
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                About Us
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                News & Media
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                Sustainability
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                Careers
+              <Typography
+                variant="body2"
+                component={RRLink}
+                to="https://www.iitism.ac.in/"
+              >
+                IIT (ISM)
               </Typography>
             </li>
           </ul>
         </Container>
         <Container>
           <Typography variant="h6" className="row-title">
-            About Us
+            Merchandise
           </Typography>
           <ul>
             <li>
               <Typography variant="body2" component={RRLink}>
-                Leadership Team
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                About Us
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                News & Media
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                Sustainability
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                Careers
+                Tshirt
               </Typography>
             </li>
           </ul>
         </Container>
         <Container>
           <Typography variant="h6" className="row-title">
-            Links
+            Sponsorship
           </Typography>
           <ul>
             <li>
-              <Typography variant="body2" component={RRLink}>
-                Leadership Team
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                About Us
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                News & Media
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                Sustainability
-              </Typography>
-            </li>
-            <li>
-              <Typography variant="body2" component={RRLink}>
-                Careers
+              <Typography
+                variant="body2"
+                component={RRLink}
+                to="mailto:sponsorship.concetto@iitism.ac.in"
+              >
+                <Email sx={{ fontSize: "1.25em" }} />{" "}
+                sponsorship.concetto@iitism.ac.in
               </Typography>
             </li>
           </ul>

@@ -1,10 +1,10 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+import * as React from "react";
+import { Box } from "@mui/material";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(true);
@@ -18,28 +18,32 @@ export default function AlertDialog() {
   };
 
   return (
-    <div>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">
-          {"Instructions"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            1.transactionID should match with the screeshot otherwise you will not getting t shirt.<br/>
-            2. Size would not be changed
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} autoFocus>
+    <Dialog
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="alert-dialog-title"
+      aria-describedby="alert-dialog-description"
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      }}
+    >
+      <DialogTitle id="alert-dialog-title">{"Instructions"}</DialogTitle>
+      <DialogContent sx={{ p: "1em" }}>
+        <DialogContentText id="alert-dialog-description">
+          1.transactionID should match with the screeshot otherwise you will not
+          getting t shirt.
+          <br />
+          2. Size would not be changed
+        </DialogContentText>
+        <Box sx={{mt: "1em"}}>
+          <Button onClick={handleClose} variant="contained">
             Agree
           </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
+        </Box>
+      </DialogContent>
+    </Dialog>
   );
 }

@@ -8,19 +8,18 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useLocation
-} from "react-router-dom"
+  useLocation,
+} from "react-router-dom";
 // import { createBrowserHistory } from 'history';
 import { init, animate } from "./heroSection";
 import Tshirt from "./Tshirt";
 function RouteChangeHandler() {
   const location = useLocation();
-  console.log(location.pathname);
-  if(location.pathname==='/tshirt'){
-    document.getElementById('canvas_container').style.display='none';
-  }
-  else{
-    document.getElementById('canvas_container').removeAttribute("display");
+  // console.log(location.pathname);
+  if (location.pathname !== "/") {
+    document.getElementById("canvas_container").style.display = "none";
+  } else {
+    document.getElementById("canvas_container").removeAttribute("display");
   }
 
   return null; // This component doesn't render anything
@@ -56,21 +55,24 @@ function App() {
 
   return (
     <>
-      <Router>
       <RouteChangeHandler />
-        <Routes>
-          <Route exact path="/tshirt" element={<Tshirt />} />
-          <Route exact path="/" element={<div className="App">
-            <div id="targetSection">
-              <Background />
-              <div className="parallax-content">
-                <ContentBelow />
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <div className="App">
+              <div id="targetSection">
+                <Background />
+                <div className="parallax-content">
+                  <ContentBelow />
+                </div>
               </div>
             </div>
-          </div>} />
-        </Routes>
-
-      </Router>
+          }
+        />
+        <Route exact path="/tshirt" element={<Tshirt />} />
+      </Routes>
     </>
   );
 }

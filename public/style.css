@@ -177,7 +177,7 @@ li span {
 }
 .rotor-group::after{
     display: none;
-=======
+}
 
 @media screen and (max-width: 400px){
     /* NO ROTATION ON MOBILE DEVICE */
