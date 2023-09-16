@@ -1,4 +1,5 @@
 import { Box, Link, Container, Typography } from "@mui/material";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Link as RRLink } from "react-router-dom";
 // import iitism2 from "../../assets/iitism.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -35,6 +36,7 @@ const socialNetworks = [
 ];
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <Wrapper>
       <Box className="top-box">
@@ -97,8 +99,8 @@ export default function Footer() {
           </Typography>
           <ul>
             <li>
-              <Typography variant="body2" component={RRLink}>
-                Tshirt
+              <Typography variant="body2" component={RRLink} to="tshirt">
+                T-shirt
               </Typography>
             </li>
           </ul>

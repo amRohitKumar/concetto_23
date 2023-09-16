@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Box } from "@mui/material";
+import { Box, List, ListItem } from "@mui/material";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import CircleIcon from "@mui/icons-material/Circle";
 
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(true);
@@ -33,12 +34,20 @@ export default function AlertDialog() {
       <DialogTitle id="alert-dialog-title">{"Instructions"}</DialogTitle>
       <DialogContent sx={{ p: "1em" }}>
         <DialogContentText id="alert-dialog-description">
-          1.transactionID should match with the screeshot otherwise you will not
-          getting t shirt.
-          <br />
-          2. Size would not be changed
+          <List>
+            <ListItem>
+              Make the payment using the QR code (located in the last image of
+              the slider).
+            </ListItem>
+            <ListItem>
+              Upload the transaction screenshot.
+            </ListItem>
+            <ListItem>
+              Enter the same transaction ID in the input box.
+            </ListItem>
+          </List>
         </DialogContentText>
-        <Box sx={{mt: "1em"}}>
+        <Box sx={{ mt: "1em" }}>
           <Button onClick={handleClose} variant="contained">
             Agree
           </Button>

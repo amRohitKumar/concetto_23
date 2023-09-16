@@ -1,5 +1,5 @@
 import React from "react";
-import { div, Paper, Typography } from "@mui/material";
+import { Box, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -8,12 +8,13 @@ import image from "../src/imagestshirt/concetto_full_logo.png";
 import Form from "react-bootstrap/Form";
 import Uu from "./size";
 import "bootstrap/dist/css/bootstrap.min.css";
-import one from "../src/imagestshirt/1.jpg";
-import two from "../src/imagestshirt/2.jpg";
-import three from "../src/imagestshirt/3.jpg";
-import four from "../src/imagestshirt/4.jpg";
+import one from "../src/imagestshirt/1.webp";
+import two from "../src/imagestshirt/2.webp";
+import three from "../src/imagestshirt/3.webp";
+import four from "../src/imagestshirt/4.webp";
 import five from "../src/imagestshirt/5.jpg";
-import six from "../src/imagestshirt/6.jpeg";
+import six from "../src/imagestshirt/6.webp";
+import seven from "../src/imagestshirt/7.webp";
 import { useState } from "react";
 import axios from "axios";
 import "./style2.css";
@@ -22,6 +23,7 @@ const images = [
   { url: two },
   { url: three },
   { url: four },
+  { url: seven },
   { url: six },
   { url: five },
 ];
@@ -113,7 +115,7 @@ export default function App() {
       );
       console.log(usr);
     } catch (error) {
-      console.log("error",error);
+      console.log("error", error);
     }
   };
   const handleImageChange = (event) => {
@@ -130,19 +132,17 @@ export default function App() {
               width={640}
               height={500}
               images={images}
-              showBullets={true}
-              showNavs={true}
+              // showBullets={true}
+              // showNavs={true}
+              autoPlay={true}
+              className="image-slider"
             />
           </div>
           <div className="text-light">
-            <Typography  variant="h5" className="mb-3 padd" align="center">
+            <Typography variant="h5" className="mb-3 padd" align="center">
               Enter Your Information
             </Typography>
-            <Form
-
-              className="m-3"
-              onSubmit={submitHandler}
-            >
+            <Form className="m-3" onSubmit={submitHandler}>
               <div style={responsiveColumn}>
                 <InputDefault
                   label="Name"
@@ -233,7 +233,7 @@ export default function App() {
               {/* <span>Size</span> */}
               {/* <br/> */}
               <Uu size={size} setSize={setSize} />
-              <div >
+              <Box>
                 <label htmlFor="upload-photo">
                   <input
                     style={{ display: "none" }}
@@ -244,14 +244,19 @@ export default function App() {
                     required
                     accept="image/*"
                   />
-                  <Button className="m-3" variant="outlined" component="span">
-                    Upload button
+                  <Button className="m-3" variant="contained" component="span">
+                    Upload Screenshot
                   </Button>
                 </label>
-                <Button type="submit" className="m-3" variant="contained">
+                <Button
+                  type="submit"
+                  className="m-3"
+                  variant="contained"
+                  sx={{ transform: "none" , left: "0"}}
+                >
                   Place order
                 </Button>
-              </div>
+              </Box>
             </Form>
           </div>
         </div>
