@@ -87,7 +87,7 @@ export default function App() {
   const [room, setRoom] = useState("");
   const [size, setSize] = useState("");
   const [url, setUrl] = useState("");
-  const server = "https://concetto-backend-4t49.onrender.com";
+  const server = process.env.REACT_APP_DB_URL || "http://localhost:8000";
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
@@ -111,7 +111,7 @@ export default function App() {
       }
 
       // console.log(response);
-      await axios.post(`${server}/purchase`, formData, {
+      await axios.post(`${server}/api/purchase`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
