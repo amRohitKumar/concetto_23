@@ -259,10 +259,10 @@ export default function App() {
                     required
                     accept="image/*"
                   />
+                  <Button className="m-3" variant="contained" component="span">
+                    Upload Screenshot
+                  </Button>
                 </label>
-                <Button className="m-3" variant="contained" component="span">
-                  Upload Screenshot
-                </Button>
                 <Button
                   type="submit"
                   className="m-3"
