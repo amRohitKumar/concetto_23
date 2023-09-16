@@ -127,15 +127,16 @@ export default function App() {
       <div className="m-3" id="canvas_box2">
         <img src={image} className="my-1" height={70} alt="404" />
         <div style={flexContainerStyle}>
-          <div className="note mt-5">
+          <div className="note mt-5 image-slider">
             <SimpleImageSlider
               width={640}
               height={500}
               images={images}
               // showBullets={true}
-              // showNavs={true}
-              autoPlay={true}
-              className="image-slider"
+              showNavs={true}
+              // autoPlay={true}
+              // className="image-slider"
+              // style={{button: "1px solid red !important" }}
             />
           </div>
           <div className="text-light">

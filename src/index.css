@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* slider css fix */
+
+.image-slider button{
+  /* border: 1px solid red !important; */
+  top: 0 !important;
+}
+
+.image-slider button:nth-of-type(2){
+  /* border: 1px solid blue !important; */
+  /* right: 0 !important; */
+  left: 95% !important;
+}
