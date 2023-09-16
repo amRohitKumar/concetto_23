@@ -4,6 +4,7 @@ body {
 
 #canvas_container {
     overflow-x: hidden;
+    background-image: url('./static_bg.jpg');
     width: 100vw !important;
     height: 100vh !important;
     /* z-index: -1 !important; */
@@ -14,6 +15,7 @@ body {
     height: 400px;
     background-color: #f0f0f0;
     text-align: center;
+    overflow-y: hidden;
 }
 
 #canvas_box {
@@ -69,6 +71,7 @@ body {
     0% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(20px);
     }
@@ -172,32 +175,38 @@ li span {
     color: white;
 }
 
-.rotor-group::before{
-    display: none;
-}
-.rotor-group::after{
+.rotor-group::before {
     display: none;
 }
 
-@media screen and (max-width: 400px){
+.rotor-group::after {
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+
     /* NO ROTATION ON MOBILE DEVICE */
-    .canvas_btn1{
+    .canvas_btn1 {
         display: block;
     }
-    .canvas_btn2{
+
+    .canvas_btn2 {
         display: none;
     }
-    #canvas_content{
+
+    #canvas_content {
         width: 100vw;
         height: 100vh;
         pointer-events: auto !important;
     }
 }
+
 @media screen and (min-width: 500px) {
-    .canvas_btn1{
+    .canvas_btn1 {
         display: none;
     }
-    .canvas_btn2{
+
+    .canvas_btn2 {
         display: block;
     }
 }

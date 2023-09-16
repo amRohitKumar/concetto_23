@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import Registration from "./Registration";
+// import Registration from "./Registration";
 import "./App.css";
-import ThreeJSBackground from "./ThreeJSBackground";
+import { Toaster } from "react-hot-toast";
 import ContentBelow from "./ContentBelow";
 import Background from "./Background";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
@@ -56,6 +55,7 @@ function App() {
   return (
     <>
       <RouteChangeHandler />
+      <Toaster />
       <Routes>
         <Route
           exact

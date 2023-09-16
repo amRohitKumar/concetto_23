@@ -1,4 +1,5 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { Box, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import TextField from "@mui/material/TextField";
@@ -86,35 +87,50 @@ export default function App() {
   const [room, setRoom] = useState("");
   const [size, setSize] = useState("");
   const [url, setUrl] = useState("");
-  const server = "https://concetto-23-nuc1.onrender.com/api";
+  const server = "https://concetto-backend-4t49.onrender.com";
   const submitHandler = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("image", url);
     try {
-      const usr = await axios.post(
-        `${server}/purchase`,
-        formData,
-        {
-          orderID: transId,
-          name: name,
-          admissionNumber: admNo,
-          mobileNumber: mobNo,
-          branch: branch,
-          tshirtSize: size,
-          transactionID: transId,
-          hostel: hostel,
-          roomNumber: room,
+      const formData = new FormData();
+
+      const response = {
+        orderID: transId,
+        name: name,
+        admissionNumber: admNo,
+        mobileNumber: mobNo,
+        branch: branch,
+        tshirtSize: size,
+        transactionID: transId,
+        hostel: hostel,
+        roomNumber: room,
+        image: url,
+      };
+
+      for (let prop in response) {
+        formData.append(prop, response[prop]);
+      }
+
+      // console.log(response);
+      await axios.post(`${server}/purchase`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
-      );
-      console.log(usr);
+      });
+
+      // resetting values
+      setName("");
+      setAdmNo("");
+      setEmail("");
+      setMobNo("");
+      setBranch("");
+      setHostel("");
+      setTransId("");
+      setRoom("");
+      setSize("");
+      setUrl("");
+      toast.success("Order successful !");
     } catch (error) {
+      toast.error("Something went wrong ! Try contacting the admins");
       console.log("error", error);
     }
   };
@@ -135,8 +151,6 @@ export default function App() {
               // showBullets={true}
               showNavs={true}
               // autoPlay={true}
-              // className="image-slider"
-              // style={{button: "1px solid red !important" }}
             />
           </div>
           <div className="text-light">
@@ -245,15 +259,15 @@ export default function App() {
                     required
                     accept="image/*"
                   />
-                  <Button className="m-3" variant="contained" component="span">
-                    Upload Screenshot
-                  </Button>
                 </label>
+                <Button className="m-3" variant="contained" component="span">
+                  Upload Screenshot
+                </Button>
                 <Button
                   type="submit"
                   className="m-3"
                   variant="contained"
-                  sx={{ transform: "none" , left: "0"}}
+                  sx={{ transform: "none", left: "0" }}
                 >
                   Place order
                 </Button>
