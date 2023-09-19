@@ -57,7 +57,18 @@ export default function Footer() {
                 gap: "1rem",
               }}
             >
-              <Email sx={{ fontSize: "1.25em" }} /> concetto@iitism.ac.in
+             <ul>
+            <li>
+            <Typography
+                variant="body2"
+                component={RRLink}
+                to="mailto:concetto@iitism.ac.in"
+              >
+              <Email sx={{ fontSize: "1.25em" }} />{' '} 
+              concetto@iitism.ac.in
+              </Typography>
+              </li>
+              </ul>
             </Box>
             {/* <Box
               sx={{

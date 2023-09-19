@@ -32,7 +32,7 @@ center div{
     margin: 24px;
 }
 
-#targetSection > div.parallax-content > div > center > div > span:nth-child(2) > a > img{
+#targetSection > div.parallax-content > div > center > div > span:nth-child(2) > img{
     background-color: rgb(237, 237, 237);
 }
 

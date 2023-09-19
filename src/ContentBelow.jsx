@@ -9,9 +9,9 @@ const allSponsors = [];
 SponsorsList.forEach((sponsor, idx) => {
   allSponsors.push(
     <span key={idx}>
-      <a href={sponsor.link}>
+      {/* <a href={sponsor.link}> */}
         <img src={sponsor.img} alt="sponsor poster" className="style"></img>
-      </a>
+      {/* </a> */}
     </span>
   );
 });
