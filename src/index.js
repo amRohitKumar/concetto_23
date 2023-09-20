@@ -6,7 +6,6 @@ import Headline from "./Headline";
 import Count from "./Countdown";
 import { BrowserRouter } from "react-router-dom";
 
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -16,9 +15,7 @@ root.render(
   </React.StrictMode>
 );
 const root1 = ReactDOM.createRoot(document.getElementById("root1"));
-root1.render(
-<Count/>
-);
+root1.render(<Count />);
 
 // const root2 = ReactDOM.createRoot(document.getElementById("canvas_container"));
 

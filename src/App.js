@@ -4,6 +4,7 @@ import "./App.css";
 import { Toaster } from "react-hot-toast";
 import ContentBelow from "./ContentBelow";
 import Background from "./Background";
+import { Error } from "./pages";
 import { Routes, Route, useLocation } from "react-router-dom";
 // import { createBrowserHistory } from 'history';
 import { init, animate } from "./heroSection";
@@ -21,7 +22,7 @@ function App() {
     const block = document.querySelector("#canvas_container");
     const parallaxWrapper = document.querySelector(".sponsor");
 
-    console.log(location);
+    // console.log(location);
     if (block) {
       // remove block for pages other then home page
       if (location.pathname !== "/") {
@@ -55,7 +56,6 @@ function App() {
       <Toaster />
       <Routes>
         <Route
-          exact
           path="/"
           element={
             <div className="App">
@@ -69,6 +69,7 @@ function App() {
           }
         />
         <Route exact path="/tshirt" element={<Tshirt />} />
+        <Route exact path="*" element={<Error />}></Route>
       </Routes>
     </>
   );
