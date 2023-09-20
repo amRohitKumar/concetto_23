@@ -91,6 +91,9 @@ export default function App() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
+      if (!url) {
+        return toast.error("Attach screenshot of the payment !");
+      }
       const formData = new FormData();
 
       const response = {
@@ -151,7 +154,11 @@ export default function App() {
             >
               {images.map((el, idx) => (
                 <Box key={idx} className="tshirt-carousel-img">
-                  <img src={el.url} alt="tshirt" style={{objectFit: "contain", objectPosition: "bottom"}} />
+                  <img
+                    src={el.url}
+                    alt="tshirt"
+                    style={{ objectFit: "contain", objectPosition: "bottom" }}
+                  />
                 </Box>
               ))}
             </Carousel>
