@@ -3,9 +3,11 @@ import toast from "react-hot-toast";
 import { Box, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import TextField from "@mui/material/TextField";
+import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
 import image from "../src/imagestshirt/concetto_full_logo.png";
 import Form from "react-bootstrap/Form";
+import Backdrop from "@mui/material/Backdrop";
 import Uu from "./size";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -77,6 +79,7 @@ const responsiveColumn = {
   padding: "5px", // Adjust spacing as needed
 };
 export default function App() {
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [admNo, setAdmNo] = useState("");
   const [email, setEmail] = useState("");
@@ -88,12 +91,15 @@ export default function App() {
   const [size, setSize] = useState("");
   const [url, setUrl] = useState("");
   const server = process.env.REACT_APP_DB_URL || "http://localhost:8000";
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
       if (!url) {
         return toast.error("Attach screenshot of the payment !");
       }
+
+      setLoading(true);
       const formData = new FormData();
 
       const response = {
@@ -131,8 +137,10 @@ export default function App() {
       setRoom("");
       setSize("");
       setUrl("");
+      setLoading(false);
       toast.success("Order successful !");
     } catch (error) {
+      setLoading(false);
       toast.error("Something went wrong ! Try contacting the admins");
       console.log("error", error);
     }
@@ -143,7 +151,24 @@ export default function App() {
 
   return (
     <div id="canvas_container2">
-      <div className="m-3" id="canvas_box2">
+      {loading && (
+        <Box
+          sx={{
+            position: "fixed",
+            zIndex: "9999999",
+            top: "50%",
+            height: "100vh",
+            width: "100vw",
+          }}
+        >
+          <CircularProgress color="inherit" />
+        </Box>
+      )}
+      <div
+        className="m-3"
+        id="canvas_box2"
+        style={{ opacity: loading ? "0.5" : "1" }}
+      >
         <img src={image} className="my-1" height={70} alt="404" />
         <div style={flexContainerStyle}>
           <Box className="tshirt-carousel">
@@ -266,7 +291,6 @@ export default function App() {
                     name="upload-photo"
                     type="file"
                     onChange={handleImageChange}
-                    required
                     accept="image/*"
                   />
                   <Button className="m-3" variant="contained" component="span">
