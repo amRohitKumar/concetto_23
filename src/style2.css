@@ -99,21 +99,26 @@ footer p {
   padding-top: 20px;
 }
 
-.tshirt-carousel{
+.tshirt-carousel {
   margin-top: 5em;
   width: 40%;
 }
 
-.tshirt-carousel div, .tshirt-carousel img{
-  height: 400px;
+.tshirt-carousel div {
+  max-height: 600px;
+}
+
+.tshirt-carousel-img img {
+  max-height: 370px !important;
 }
 
 @media screen and (max-width: 980px) {
-  .tshirt-carousel{
+  .tshirt-carousel {
     margin-top: 1em;
     width: 90%;
   }
-  .tshirt-carousel div, .tshirt-carousel img{
-    height: 300px;
-  }  
+
+  /* .tshirt-carousel div, .tshirt-carousel img{
+    height: 350px;
+  }   */
 }

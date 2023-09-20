@@ -148,11 +148,10 @@ export default function App() {
               showThumbs={false}
               showStatus={false}
               showIndicators={false}
-              dynamicHeight={true}
             >
-              {images.map((el) => (
-                <Box className="tshirt-carousel-img">
-                  <img src={el.url} alt="tshirt" style={{objectFit: "contain", objectPosition: "center"}} />
+              {images.map((el, idx) => (
+                <Box key={idx} className="tshirt-carousel-img">
+                  <img src={el.url} alt="tshirt" style={{objectFit: "contain", objectPosition: "bottom"}} />
                 </Box>
               ))}
             </Carousel>
@@ -217,7 +216,7 @@ export default function App() {
                   }}
                 />
               </div>
-              <div style={responsiveColumn} className="hostel" fullWidth>
+              <div style={responsiveColumn} className="hostel">
                 <InputDefault
                   label="Hostel"
                   className="w-50"

@@ -1,6 +1,5 @@
 import React from "react";
 import { SponsorsList } from "./SponsorList";
-import { Build, Title } from "@mui/icons-material";
 import Footer from "./footer/Footer";
 import "./styles1.css";
 
@@ -9,9 +8,7 @@ const allSponsors = [];
 SponsorsList.forEach((sponsor, idx) => {
   allSponsors.push(
     <span key={idx}>
-      <a href={sponsor.link}>
-        <img src={sponsor.img} alt="sponsor poster" className="style"></img>
-      </a>
+      <img src={sponsor.img} alt="sponsor poster" className="style"></img>
     </span>
   );
 });
@@ -32,7 +29,7 @@ const ContentBelow = () => {
       <center>
         <div>{allSponsors}</div>
       </center>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

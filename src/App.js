@@ -21,15 +21,17 @@ function App() {
     const block = document.querySelector("#canvas_container");
     const parallaxWrapper = document.querySelector(".sponsor");
 
-    if (block && parallaxWrapper) {
-
+    console.log(location);
+    if (block) {
       // remove block for pages other then home page
       if (location.pathname !== "/") {
         block.style.display = "none";
       } else {
-        block.removeAttribute("display");
+        block.style.display = "block";
       }
+    }
 
+    if (block && parallaxWrapper) {
       // scroll react component only when block is completely scrolled
       const scrollTriggerPoint = block.offsetTop + block.offsetHeight;
       const handleScroll = () => {
@@ -46,7 +48,7 @@ function App() {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, []);
+  }, [location.pathname]);
 
   return (
     <>

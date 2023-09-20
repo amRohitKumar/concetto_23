@@ -1,18 +1,11 @@
 import { Box, Link, Container, Typography } from "@mui/material";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link as RRLink } from "react-router-dom";
-// import iitism2 from "../../assets/iitism.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-// import NVCTILogo from "../logo/logo";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Wrapper } from "./Styles";
-import { Email, Phone } from "@mui/icons-material";
+import { Email } from "@mui/icons-material";
 
 const socialNetworks = [
   {
