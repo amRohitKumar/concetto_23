@@ -4,16 +4,16 @@ import { Box, Paper, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import SimpleImageSlider from "react-simple-image-slider";
 import image from "../src/imagestshirt/concetto_full_logo.png";
 import Form from "react-bootstrap/Form";
 import Uu from "./size";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import one from "../src/imagestshirt/1.webp";
 import two from "../src/imagestshirt/2.webp";
 import three from "../src/imagestshirt/3.webp";
 import four from "../src/imagestshirt/4.webp";
-import five from "../src/imagestshirt/5.jpg";
+import five from "../src/imagestshirt/5.jpeg";
 import six from "../src/imagestshirt/6.webp";
 import seven from "../src/imagestshirt/7.webp";
 import { useState } from "react";
@@ -143,16 +143,20 @@ export default function App() {
       <div className="m-3" id="canvas_box2">
         <img src={image} className="my-1" height={70} alt="404" />
         <div style={flexContainerStyle}>
-          <div className="note mt-5 image-slider">
-            <SimpleImageSlider
-              width={640}
-              height={500}
-              images={images}
-              // showBullets={true}
-              showNavs={true}
-              // autoPlay={true}
-            />
-          </div>
+          <Box className="tshirt-carousel">
+            <Carousel
+              showThumbs={false}
+              showStatus={false}
+              showIndicators={false}
+              dynamicHeight={true}
+            >
+              {images.map((el) => (
+                <Box className="tshirt-carousel-img">
+                  <img src={el.url} alt="tshirt" style={{objectFit: "contain", objectPosition: "center"}} />
+                </Box>
+              ))}
+            </Carousel>
+          </Box>
           <div className="text-light">
             <Typography variant="h5" className="mb-3 padd" align="center">
               Enter Your Information

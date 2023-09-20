@@ -50,12 +50,18 @@ export default function Footer() {
           </Typography>
           <Box sx={{ fontSize: "1.25em", color: "#fa9119", mb: 2, mx: "auto" }}>
             <Box
+              component={RRLink}
               sx={{
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 gap: "1rem",
+                color: "#e87d01",
+                "&:hover": {
+                  color: "#e87d01",
+                },
               }}
+              to="mailto:concetto@iitism.ac.in"
             >
               <Email sx={{ fontSize: "1.25em" }} /> concetto@iitism.ac.in
             </Box>
