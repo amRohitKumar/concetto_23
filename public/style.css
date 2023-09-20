@@ -201,7 +201,7 @@ li span {
     }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 400px) {
     .canvas_btn1 {
         display: none;
     }

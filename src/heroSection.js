@@ -85,7 +85,7 @@ function init() {
   /*    Moving Stars   */
   let starsGeometry = new THREE.Geometry();
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 40; i++) {
     let particleStar = randomPointSphere(150);
 
     particleStar.velocity = THREE.MathUtils.randInt(50, 200);

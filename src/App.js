@@ -4,30 +4,17 @@ import "./App.css";
 import { Toaster } from "react-hot-toast";
 import ContentBelow from "./ContentBelow";
 import Background from "./Background";
-import {
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 // import { createBrowserHistory } from 'history';
 import { init, animate } from "./heroSection";
 import Tshirt from "./Tshirt";
-function RouteChangeHandler() {
-  const location = useLocation();
-  // console.log(location.pathname);
-  if (location.pathname !== "/") {
-    document.getElementById("canvas_container").style.display = "none";
-  } else {
-    document.getElementById("canvas_container").removeAttribute("display");
-  }
-
-  return null; // This component doesn't render anything
-}
 
 init();
 animate();
 
 function App() {
+  const location = useLocation();
+
   useEffect(() => {
     // console.log("here ...");
     // Wait for the component to render
@@ -35,6 +22,15 @@ function App() {
     const parallaxWrapper = document.querySelector(".sponsor");
 
     if (block && parallaxWrapper) {
+
+      // remove block for pages other then home page
+      if (location.pathname !== "/") {
+        block.style.display = "none";
+      } else {
+        block.removeAttribute("display");
+      }
+
+      // scroll react component only when block is completely scrolled
       const scrollTriggerPoint = block.offsetTop + block.offsetHeight;
       const handleScroll = () => {
         if (window.scrollY >= scrollTriggerPoint) {
@@ -54,7 +50,6 @@ function App() {
 
   return (
     <>
-      <RouteChangeHandler />
       <Toaster />
       <Routes>
         <Route

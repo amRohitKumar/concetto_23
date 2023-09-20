@@ -1,5 +1,5 @@
 :root {
-    --button-color: #00617c;
+    --button-color: #34c682aa;
     --second-color: #050f1a;
 }
 
@@ -23,7 +23,8 @@ center div{
     padding: 2%;
     border: 2px solid var(--button-color);
     border-radius: 15px;
-    box-shadow: 0 0 0.1rem var(--button-color), 0 0 0.1rem var(--button-color), 0 0 1rem #00617c, 0 0 0.4rem #00617c, 0 0 1.4rem #00617c, inset 0 0 0.7rem #00617c;
+    /* box-shadow: 0 0 0.1rem var(--button-color), 0 0 0.1rem var(--button-color), 0 0 1rem var(--button-color), 0 0 0.4rem var(--button-color), 0 0 1.4rem var(--button-color), inset 0 0 0.7rem var(--button-color); */
+    box-shadow: var(--button-color) 0px 5px 15px;
     &:hover {
         transform: scale(1.05);
     }
