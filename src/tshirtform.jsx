@@ -16,7 +16,7 @@ import one from "../src/imagestshirt/1.webp";
 import two from "../src/imagestshirt/2.webp";
 import three from "../src/imagestshirt/3.webp";
 import four from "../src/imagestshirt/4.webp";
-import five from "../src/imagestshirt/5.jpeg";
+import five from "../src/imagestshirt/5.png";
 import six from "../src/imagestshirt/6.webp";
 import seven from "../src/imagestshirt/7.webp";
 import { useState } from "react";
