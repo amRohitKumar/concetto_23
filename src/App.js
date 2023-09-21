@@ -56,10 +56,11 @@ function App() {
     <>
       <Toaster />
       <Routes>
-        {/*  <Route
+         <Route
+          exact
           path="/"
           element={
-            <div className="App">
+            <div>
               <div id="targetSection">
                 <Navbar />
                 <Background />
@@ -71,8 +72,7 @@ function App() {
           }
         />
         <Route exact path="/tshirt" element={<Tshirt />} />
-        <Route exact path="*" element={<Error />}></Route> */}
-        <Route path="/" element={<Navbar />}></Route>
+        <Route exact path="*" element={<Error />}></Route>
       </Routes >
     </>
   );

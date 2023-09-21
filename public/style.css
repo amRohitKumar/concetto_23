@@ -5,6 +5,7 @@ body {
 #canvas_container {
     overflow-x: hidden;
     background-image: url('./static_bg.jpg');
+    /* border: 1px solid red; */
     width: 100vw !important;
     height: 100vh !important;
     /* z-index: -1 !important; */
@@ -21,7 +22,7 @@ body {
 #canvas_box {
     width: auto;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
@@ -33,6 +34,7 @@ body {
 #canvas_content {
     /* display: block; */
     /* user-select: none; */
+    /* border: 1px solid red; */
     pointer-events: none !important;
     font-size: 24px;
     color: #ffffff;

@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import image from "../src/imagestshirt/concetto_full_logo.png";
 import Form from "react-bootstrap/Form";
 import Uu from "./size";
+import { Link } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import one from "../src/imagestshirt/1.webp";
@@ -172,7 +173,9 @@ export default function App() {
         id="canvas_box2"
         style={{ opacity: loading ? "0.5" : "1" }}
       >
-        <img src={image} className="my-1" height={70} alt="404" />
+        <Link to="/">
+          <img src={image} className="my-1" height={70} alt="404" />
+        </Link>
         <div style={flexContainerStyle}>
           <Box className="tshirt-carousel">
             <Carousel
@@ -185,7 +188,7 @@ export default function App() {
                   <img
                     src={el.url}
                     alt="tshirt"
-                    style={{ objectFit: "contain", objectPosition: "bottom" }}
+                    style={{ objectFit: "contain", objectPosition: "center" }}
                   />
                 </Box>
               ))}
