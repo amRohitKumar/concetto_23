@@ -1,6 +1,7 @@
 import React from "react";
 import toast from "react-hot-toast";
 import { Box, Paper, Typography } from "@mui/material";
+import Chip from "@mui/material/Chip";
 import { styled } from "@mui/system";
 import TextField from "@mui/material/TextField";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -141,7 +142,9 @@ export default function App() {
       setSize("");
       setUrl("");
       setLoading(false);
-      toast.success("Order successful !");
+      toast.success(
+        "Your order has been confirmed successfully! Please check your email for the receipt."
+      );
     } catch (error) {
       setLoading(false);
       toast.error("Something went wrong ! Try contacting the admins");
@@ -300,15 +303,26 @@ export default function App() {
               </div>
               <div style={responsiveColumn}>
                 <label htmlFor="upload-photo" class="custom-file-upload">
-                  <input
-                    className="tshirt-input"
-                    id="upload-photo"
-                    name="upload-photo"
-                    type="file"
-                    onChange={handleImageChange}
-                    accept="image/*"
+                  <Chip
+                    sx={{
+                      backgroundColor: "white",
+                      color: "black",
+                      borderRadius: "4px",
+                    }}
+                    label="Payment screenshot"
                   />
+                  &nbsp;
+                  {url?.name}
                 </label>
+                <input
+                  className="tshirt-input"
+                  style={{ display: "none" }}
+                  id="upload-photo"
+                  name="upload-photo"
+                  type="file"
+                  onChange={handleImageChange}
+                  accept="image/*"
+                />
               </div>
               <Uu size={size} setSize={setSize} />
               <Box>

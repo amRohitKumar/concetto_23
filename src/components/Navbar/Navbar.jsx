@@ -95,6 +95,7 @@ const Navbar = () => {
               variant="temporary"
               open={mobileOpen}
               anchor={"bottom"}
+              className="bottomBar"
               onClose={handleDrawerToggle}
               ModalProps={{
                 keepMounted: true, // Better open performance on mobile.
@@ -103,7 +104,14 @@ const Navbar = () => {
                 display: { xs: "block", sm: "none" },
                 "& .MuiDrawer-paper": {
                   boxSizing: "border-box",
-                  width: drawerWidth,
+                  width: "100vw",
+                  height: "100vh",
+                  background: "#171717",
+                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  flexDirection: "column",
+                  justifyContent: "center",
                 },
               }}
             >
@@ -112,19 +120,21 @@ const Navbar = () => {
                 sx={{
                   textAlign: "center",
                 }}
-                className="bottomBar"
               >
                 <Divider />
                 <List>
-                  <ListItem disablePadding>
+                  <ListItem
+                    disablePadding
+                    sx={{ borderBottom: "1px solid white" }}
+                  >
                     <ListItemButton
-                      sx={{ textAlign: "center" }}
+                      sx={{ textAlign: "center", "&:hover": { color: "blue" } }}
                       onClick={() => scrollToSponsor()}
-                      className="nav-link"
                     >
                       <ListItemText primary="Sponsors" />
                     </ListItemButton>
                   </ListItem>
+                  {/* <Divider  sx={{color: "white", width: "100vw", height: "2px", zIndex: "99999999"}}/> */}
                   <ListItem disablePadding>
                     <ListItemButton
                       sx={{ textAlign: "center" }}
