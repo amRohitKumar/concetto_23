@@ -57,6 +57,19 @@ body {
     color: white
 }
 
+@media screen and (max-width: 1300px) {
+    .canvas_title {
+        margin-top: 1em;
+        font-size: 1em;
+    }
+    .canvas_img{
+        width: 40%;
+    }
+    .flipdown{
+        margin-top: 1em;
+    }
+}
+
 .canvas_btn {
     /* z-index: inherit; */
     background-color: transparent;
