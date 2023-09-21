@@ -9,6 +9,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 // import { createBrowserHistory } from 'history';
 import { init, animate } from "./heroSection";
 import Tshirt from "./Tshirt";
+import Navbar from "./components/Navbar/Navbar";
 
 init();
 animate();
@@ -55,11 +56,12 @@ function App() {
     <>
       <Toaster />
       <Routes>
-        <Route
+        {/*  <Route
           path="/"
           element={
             <div className="App">
               <div id="targetSection">
+                <Navbar />
                 <Background />
                 <div className="parallax-content">
                   <ContentBelow />
@@ -69,8 +71,9 @@ function App() {
           }
         />
         <Route exact path="/tshirt" element={<Tshirt />} />
-        <Route exact path="*" element={<Error />}></Route>
-      </Routes>
+        <Route exact path="*" element={<Error />}></Route> */}
+        <Route path="/" element={<Navbar />}></Route>
+      </Routes >
     </>
   );
 }
