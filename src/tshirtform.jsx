@@ -7,7 +7,6 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Button from "@mui/material/Button";
 import image from "../src/imagestshirt/concetto_full_logo.png";
 import Form from "react-bootstrap/Form";
-import Backdrop from "@mui/material/Backdrop";
 import Uu from "./size";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
@@ -75,8 +74,10 @@ const flexContainerStyle = {
 };
 
 const responsiveColumn = {
+  display: "flex",
   flexBasis: "100%", // Make each item take full width in a column
   padding: "5px", // Adjust spacing as needed
+  justifyContent: "space-between",
 };
 export default function App() {
   const [loading, setLoading] = useState(false);
@@ -113,6 +114,7 @@ export default function App() {
         hostel: hostel,
         roomNumber: room,
         image: url,
+        email,
       };
 
       for (let prop in response) {
@@ -147,6 +149,7 @@ export default function App() {
   };
   const handleImageChange = (event) => {
     setUrl(event.target.files[0]);
+    console.log(url);
   };
 
   return (
@@ -196,6 +199,8 @@ export default function App() {
               <div style={responsiveColumn}>
                 <InputDefault
                   label="Name"
+                  placeholder="Manish Garje"
+                  type="text"
                   fullWidth
                   required
                   value={name}
@@ -207,6 +212,8 @@ export default function App() {
               <div style={responsiveColumn}>
                 <InputDefault
                   label="Admission Number"
+                  placeholder="21JEXXXX"
+                  type="text"
                   fullWidth
                   required
                   value={admNo}
@@ -218,6 +225,8 @@ export default function App() {
               <div style={responsiveColumn}>
                 <InputDefault
                   label="Email"
+                  type="email"
+                  placeholder="abc@gmail.com"
                   fullWidth
                   required
                   value={email}
@@ -229,6 +238,8 @@ export default function App() {
               <div style={responsiveColumn}>
                 <InputDefault
                   label="Phone Number"
+                  placeholder="8340XXXXXX"
+                  type="tel"
                   fullWidth
                   required
                   value={mobNo}
@@ -240,18 +251,32 @@ export default function App() {
               <div style={responsiveColumn}>
                 <InputDefault
                   label="Branch"
-                  fullWidth
+                  placeholder="Civil Engineering"
+                  type="text"
                   required
                   value={branch}
+                  sx={{ width: "48%", color: "white" }}
                   onChange={(e) => {
                     setBranch(e.target.value);
+                  }}
+                />
+                <InputDefault
+                  label="Transaction id"
+                  placeholder="T23091XXXXXXXXX"
+                  required
+                  value={transId}
+                  sx={{ width: "48%", color: "white" }}
+                  onChange={(e) => {
+                    setTransId(e.target.value);
                   }}
                 />
               </div>
               <div style={responsiveColumn} className="hostel">
                 <InputDefault
                   label="Hostel"
-                  className="w-50"
+                  sx={{ width: "48%", color: "white" }}
+                  type="text"
+                  placeholder="Amber"
                   required
                   value={hostel}
                   onChange={(e) => {
@@ -261,7 +286,8 @@ export default function App() {
 
                 <InputDefault
                   label="Room No"
-                  className="w-49"
+                  placeholder="A-230"
+                  sx={{ width: "48%", color: "white" }}
                   required
                   value={room}
                   onChange={(e) => {
@@ -270,33 +296,19 @@ export default function App() {
                 />
               </div>
               <div style={responsiveColumn}>
-                <InputDefault
-                  label="Transaction id"
-                  fullWidth
-                  required
-                  value={transId}
-                  onChange={(e) => {
-                    setTransId(e.target.value);
-                  }}
-                />
-              </div>
-              {/* <span>Size</span> */}
-              {/* <br/> */}
-              <Uu size={size} setSize={setSize} />
-              <Box>
-                <label htmlFor="upload-photo">
+                <label htmlFor="upload-photo" class="custom-file-upload">
                   <input
-                    style={{ display: "none" }}
+                    className="tshirt-input"
                     id="upload-photo"
                     name="upload-photo"
                     type="file"
                     onChange={handleImageChange}
                     accept="image/*"
                   />
-                  <Button className="m-3" variant="contained" component="span">
-                    Upload Screenshot
-                  </Button>
                 </label>
+              </div>
+              <Uu size={size} setSize={setSize} />
+              <Box>
                 <Button
                   type="submit"
                   className="m-3"

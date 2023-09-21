@@ -8,10 +8,11 @@
     background-color: black;
 }
 
-center h2{
+center h2 {
     margin-bottom: 1em !important;
 }
-center div{
+
+center div {
     /* border: 1px solid white; */
     margin-bottom: 2em !important;
 }
@@ -25,15 +26,17 @@ center div{
     border-radius: 15px;
     /* box-shadow: 0 0 0.1rem var(--button-color), 0 0 0.1rem var(--button-color), 0 0 1rem var(--button-color), 0 0 0.4rem var(--button-color), 0 0 1.4rem var(--button-color), inset 0 0 0.7rem var(--button-color); */
     box-shadow: var(--button-color) 0px 5px 15px;
+
     &:hover {
         transform: scale(1.05);
     }
+
     transition: transform linear 150ms;
 
     margin: 24px;
 }
 
-#targetSection > div.parallax-content > div > center > div > span:nth-child(2) > img{
+#targetSection>div.parallax-content>div>center>div>span:nth-child(2)>img {
     background-color: rgb(237, 237, 237);
 }
 
@@ -159,4 +162,17 @@ center div{
         font-weight: 600;
         font-size: 7px;
     }
+}
+
+.custom-file-upload {
+    border: 1px solid #317773;
+    border-radius: 4px;
+    padding: 1em;
+    /* width: 48%; */
+    width: 100%;
+    overflow: hidden;
+}
+
+.custom-file-upload:hover {
+    border-color: white;
 }
